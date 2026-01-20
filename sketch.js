@@ -40,7 +40,7 @@ console.log(basket[basket.length - 1]);  // 2. Last fruit
 
 basket[basket.indexOf("banana")] = "kiwi";  // Replace banana with kiwi
 
-basket.pop();              // Remove the last fruit ("pear")
+basket.pop();              // Remove the last fruit
 basket.unshift("mango");   // Add mango to the START of the basket
 
 
@@ -63,8 +63,8 @@ if (index !== -1) {
 
 
 // Copy part of the basket
-
-let citrus = basket.slice(1, 3);
+let i = 0;
+let citrus = basket.slice(1, basket.length - 1);  // Copy the middle two fruits (index 1 and 2)
 
 console.log(citrus);  // Should contain the middle two fruits
 console.log(basket);  // Original basket remains unchanged
