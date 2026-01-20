@@ -25,36 +25,46 @@
 // 	rect(250, 250, 100, 100);
 // }
 
-// -----Exercise------
+// ----- Exercise: Fruit Basket Manager ------
 
-// Read from the array
+// Starting array
 let basket = ["apple", "banana", "orange", "pear"];
 
-console.log(basket[0]); // Output the first fruit in the basket
-console.log(basket[basket.length - 1]); // Output the last fruit in the basket
+// Read from the array
+
+console.log(basket[0]);                  // 1. First fruit
+console.log(basket[basket.length - 1]);  // 2. Last fruit
 
 
 // Modify the basket
-basket[1] = "kiwi"; // Change the second fruit to kiwi
 
-basket.pop(); // Remove the last fruit from the basket
+basket[basket.indexOf("banana")] = "kiwi";  // Replace banana with kiwi
 
-basket.push("mango"); // Add a new fruit to the basket
+basket.pop();              // Remove the last fruit ("pear")
+basket.unshift("mango");   // Add mango to the START of the basket
 
-for (let i = 0; i < basket.length; i++) {
-  console.log(basket[i]);
-} // Output all fruits in the basket
+
+// Loop through the basket
 
 for (let i = 0; i < basket.length; i++) {
   console.log("Fruit " + (i + 1) + ": " + basket[i]);
-} // Output all fruits in the basket in order with their positions
+}
 
 
-// Search for Fruit
-console.log(basket.indexOf("orange")); // Find the position of orange in the basket if its not in there itll return -1
+// --- Search for fruit ---
 
-let citrus = basket.slice(1, 3);
+let index = basket.indexOf("orange");
+
+if (index !== -1) {
+  console.log("Orange found at index " + index);
+} else {
+  console.log("Orange not found");
+}
 
 
 // Copy part of the basket
-console.log(citrus); // Create a new array with the second and third fruits from the basket and output it
+
+let citrus = basket.slice(1, 3);
+
+console.log(citrus);  // Should contain the middle two fruits
+console.log(basket);  // Original basket remains unchanged
